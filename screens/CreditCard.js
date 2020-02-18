@@ -1,11 +1,11 @@
 import React from 'react';
 import { View , Text ,StyleSheet , Button} from 'react-native';
 
-const applyLoan = props=>{
+const credifCards = props=>{
     return(
         <View style={styles.screen}>
             <Text>
-                apply Loan Screen
+            credifCards
             </Text>
           <Button title="go back" onPress={()=>{
               props.navigation.goBack();
@@ -13,8 +13,8 @@ const applyLoan = props=>{
         </View>
     );
 }
-applyLoan.navigationOptions={
-title:'Apply for loan in 10 secs',
+credifCards.navigationOptions={
+title:'Credit card details',
 headerStyle:{
  backgroundColor:'red'
 },
@@ -31,4 +31,4 @@ const styles=StyleSheet.create(
         }
     }
 )
-export default applyLoan;
+export default credifCards;

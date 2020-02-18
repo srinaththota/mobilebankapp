@@ -1,12 +1,20 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import AppNavigator from './navigations/AppNavigator';
+import { createStore , combineReducers } from 'redux';
+
+import TransferReducer from './store/reducer/transfer';
+import { Provider } from 'react-redux';
+const rootReducers=combineReducers({
+  transfer:TransferReducer
+});
+const store=createStore(rootReducers);
 
 class App extends Component {
   render(){
   return (
     
-      <AppNavigator/>
+     <Provider store={store}><AppNavigator/></Provider>
       
   );
 }

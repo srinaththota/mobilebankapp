@@ -1,20 +1,20 @@
 import React from 'react';
 import { View , Text ,StyleSheet , Button} from 'react-native';
+import { useSelector } from 'react-redux';
+const transferMoney = props=>{
 
-const applyLoan = props=>{
+    const transferStatus=useSelector(state=>state.transfer.transferStatusfromStore);
     return(
         <View style={styles.screen}>
             <Text>
-                apply Loan Screen
+                TransferMoney {transferStatus}
             </Text>
-          <Button title="go back" onPress={()=>{
-              props.navigation.goBack();
-          }} />
+         
         </View>
     );
 }
-applyLoan.navigationOptions={
-title:'Apply for loan in 10 secs',
+transferMoney.navigationOptions={
+title:'Transfer money',
 headerStyle:{
  backgroundColor:'red'
 },
@@ -31,4 +31,4 @@ const styles=StyleSheet.create(
         }
     }
 )
-export default applyLoan;
+export default transferMoney;
